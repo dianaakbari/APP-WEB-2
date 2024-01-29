@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Intro to JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles.css">
+</head>
+</head>
+<body>
+	<div class="container mt-4">
+		<div class="row">
+			<h1 class="col-12">Intro to JavaScript</h1>
+		</div> <!-- .row -->
+	</div> <!-- .container -->
+
+	<div id="button-section" class="container mt-4">
+		<div class="row">
+			<h2 class="col-12">Alert Window</h2>
+			<p class="col-12">Test these buttons:</p>
+			<button id="btn-click" class="btn btn-secondary ml-1 mr-1">Don't Click Me</button>
+			<button id="btn-touch" class="btn btn-secondary ml-1 mr-1">Don't Touch Me</button>
+		</div> <!-- .row -->
+	</div> <!-- #button-section -->
+
+	<div id="color-boxes" class="container mt-4">
+		<div class="row">
+			<h2 class="col-12">Background Color Change</h2>
+			<p class="col-12">Click on a square to change background color:</p>
+		</div> <!-- .row -->
+
+		<div id="color-wrapper" class="row">
+			<div class="color-box text-center border border-dark col-4 col-md mx-1 my-1" id="color-1">
+				#000
+			</div>
+			<div class="color-box text-center border border-dark col-4 col-md mx-1 my-1" id="color-2">
+				#FFF
+			</div>
+			<div class="color-box text-center border border-dark col-4 col-md mx-1 my-1" id="color-3">
+				#CCC
+			</div>
+			<div class="color-box text-center border border-dark col-4 col-md mx-1 my-1" id="color-4">
+				#777
+			</div>
+			<div class="color-box text-center border border-dark col-4 col-md mx-1 my-1" id="color-5">
+				#FC0
+			</div>
+			<div class="color-box text-center border border-dark col-4 col-md mx-1 my-1" id="color-6">
+				#900
+			</div>
+		</div> <!-- #color-wrapper -->
+	</div> <!-- #color-boxes -->
+
+	<div id="kanye-section" class="container mt-4">
+		<div class="row">
+			<h2 class="col-12">Image Switch</h2>
+		</div> <!-- .row -->
+		<p class="text-center">Hover over the image to flip it:</p>
+		<img id="kanye" src="https://nayeon.kim/sample-images/kanye-1.jpg" alt="Kanye West">
+	</div> <!-- #kanye-section -->
+    <script>
+        //java script goes here
+
+        // A java script statment.
+       alert("hello world!");
+
+		//console is very useful to print out things to.
+		//also it shows your errors is there is a typo in your code.
+		//right click-inspect
+	
+       console.log("testing....");
+
+       console.log(document.querySelector("#btn-click"));
+
+	   //using queryselector to grab any element from the browser
+	   //برای دسترسی به تگ های htmlو cssاستفاده میشود
+
+	   //JS is able to grab any element and change its text by using . textcontent
+       document.querySelector("#btn-click").
+       textContent = "I'm a button that changed! ";
+
+	   //JS is able to grab any element and change its CSS properties by using
+	   //style.CSS_Prop_Name
+       document.querySelector("#btn-click").
+       style.backgroundColor = "blue";
+
+       document.querySelector("#btn-click").
+       style.fontFamily = "times New Roman";
+
+
+	   //Add event listeners to the elements
+	   //when user clicks on the #btn-click , the function() code will run,one line at a time
+       document.querySelector("#btn-click").
+       onclick = function() {
+		//this code will run when user click on #btn-click
+
+		//1.show the alert message
+        alert("hey dont click me");
+		//2.change background color
+		document.querySelector("#btn-click").style.backgroundColor = "red";
+		//3.change the text
+		document.querySelector("#btn-click").
+       	textContent = "you click me ";
+		
+       }
+	   
+	   //can also register hover events
+	   document.querySelector("#btn-touch").onmouseenter = 
+	   function() {
+		alert("dont touch me !");
+		document.querySelector("h1").style.backgroundColor = "purple";
+	   }
+
+	   // hange the background color
+	   document.querySelector("#color-1").onclick = function() {
+		document.querySelector("body").style.backgroundColor = "#000";
+	   }
+	   document.querySelector("#color-2").onclick = function()
+	   {
+		document.querySelector("body").style.backgroundColor = "white";
+	   }
+	   document.querySelector("#color-3").onclick = function()
+	   {
+		document.querySelector("body").style.backgroundColor = "gray";
+	   }
+       
+
+
+
+    </script>
+</body>
+</html>
